@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>외부 폴더 등록하기</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="container mt-5 p-5">
+    <!--    스프링의 view 화면에 출력하기 위한 리소스는 resources폴더 아래의 static폴더를 기준으로 함-->
+    <!--    static 폴더 내의 정보는 tomcat 서버가 동작할 시점의 데이터를 기준으로 함-->
+    <!--    이미지 파일 같은 리소스를 tomcat서버가 동작하고 있는 동안에 static폴더 내부에 저장할 경우 해당 리소스를 바로 이용할 수 없음-->
+    <!--    업로드 된 리소스를 바로 사용하기 위해서 스프링 프레임워크에 외부 폴더에 등록하여 tomcat 서버 내부에 있는 폴더인 것처럼 사용하는 것이 가능함 -->
+    <h4>static폴더 아래의 이미지 출력, src사용</h4>
+    <img src="/img/001.jpg" alt="001.jpg" class="w-25">
+
+    <h4>static 폴더 아래의 이미지 출력, th:src를 사용</h4>
+    <img src="/img/001.jpg" alt="001.jpg" th:src="@{/img/001.jpg}" class="w-25"><br>
+
+    <h4>c:\java505\images\002.jpg 출력</h4>
+    <img src="c:\\java505\\images\\002.jpg" class="w-25"><br>
+
+    <h4>외부 폴더로 등록된 폴더의 이미지 출력</h4>
+    <img src="c:\\java505\\images\\002.jpg" alt="사진2" th:src="@{/images/002.jpg}" class="w-25"><br>
+    <img src="/images/003.jpg" alt="사진3" th:src="@{/images/003.jpg}" class="w-25"><br>
+
+    <h4>image 의 이름으로 2개의 외부폴더를 등록후 사용</h4>
+    <img src="/image/004.png" th:src="@{/image/004.png}"><br>
+    <img src="/image/005.png" th:src="@{/image/005.png}"><br>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
